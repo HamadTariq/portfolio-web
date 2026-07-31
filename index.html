@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hamad Tariq — IT Administrator & DevOps Engineer. Cloud infrastructure, automation, and networking. AWS Solutions Architect, Azure Administrator, CCNA, Azure DevOps certifications in progress.">
+    <meta name="author" content="Hamad Tariq">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>Hamad Tariq | IT Admin & DevOps Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Hamad Tariq | IT Admin & DevOps Engineer">
+    <meta property="og:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking. Check out my certifications and projects.">
+    <meta property="og:image" content="og-image.svg">
+    <meta property="og:url" content="https://hamadtariq.github.io/portfolio_web/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hamad Tariq | IT Admin & DevOps Engineer">
+    <meta name="twitter:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking.">
+    <meta name="twitter:image" content="og-image.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hamad Tariq",
+        "jobTitle": "IT Administrator & DevOps Engineer",
+        "email": "mailto:hamadtariq504@gmail.com",
+        "sameAs": [
+            "https://www.linkedin.com/in/itsmehamad/",
+            "https://github.com/hamadtariq"
+        ],
+        "knowsAbout": ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "Ansible", "Networking", "CI/CD"]
+    }
+    </script>
+</head>
+<body>
+    <div class="cursor" id="cursor">
+        <div class="cursor-ring"></div>
+        <div class="cursor-dot"></div>
+    </div>
+
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1" data-parallax="0.3"></div>
+        <div class="gradient-orb orb-2" data-parallax="0.15"></div>
+        <div class="gradient-orb orb-3" data-parallax="0.2"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" data-text="HAMAD TARIQ">HAMAD TARIQ</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link" data-text="HOME">HOME</a>
+                <a href="#about" class="nav-link" data-text="ABOUT">ABOUT</a>
+                <a href="#certifications" class="nav-link" data-text="CERTS">CERTS</a>
+                <a href="#skills" class="nav-link" data-text="SKILLS">SKILLS</a>
+                <a href="#projects" class="nav-link" data-text="PROJECTS">PROJECTS</a>
+                <a href="#blog" class="nav-link" data-text="BLOG">BLOG</a>
+                <a href="#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle magnetic" data-magnetic id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="grid-overlay"></div>
+                <div class="scanline"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="terminal-title">portfolio.sh</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command"> whoami</span>
+                        </div>
+                        <div class="terminal-output">
+                            <h1 class="split-text" id="heroName">
+                                <span>HAMAD TARIQ</span>
+                            </h1>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command"> cat role.txt</span>
+                        </div>
+                        <div class="terminal-output">
+                            <p class="split-text" id="heroRole">
+                                <span>IT Administrator & DevOps Engineer</span>
+                            </p>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command"> cat certs.txt</span>
+                        </div>
+                        <div class="terminal-output certs-preview">
+                            <div class="cert-badge" data-cert="aws">AWS Solutions Architect</div>
+                            <div class="cert-badge" data-cert="azure">Azure Administrator</div>
+                            <div class="cert-badge" data-cert="ccna">CCNA</div>
+                            <div class="cert-badge" data-cert="azdo">Azure DevOps</div>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command"> ./connect --portfolio</span>
+                        </div>
+                        <div class="terminal-line terminal-input-line">
+                            <span class="prompt">$</span>
+                            <input type="text" id="terminalInput" class="terminal-input" placeholder="type 'help' and press Enter" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command input">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary magnetic" data-magnetic data-scroll-to="#projects">
+                        <span class="btn-text">View Work</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                    <button class="btn btn-secondary magnetic" data-magnetic data-scroll-to="#contact">
+                        <span class="btn-text">Get In Touch</span>
+                        <span class="btn-icon">⌨</span>
+                    </button>
+                    <a href="resume.pdf" download class="btn btn-secondary magnetic" data-magnetic>
+                        <span class="btn-text">Resume</span>
+                        <span class="btn-icon">⬇</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value counter" data-target="5">0</div>
+                        <div class="stat-label">Years Exp</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value counter" data-target="12">0</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value counter" data-target="50">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value counter" data-target="99">0</div>
+                        <div class="stat-label">Uptime %</div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span class="scroll-text">SCROLL</span>
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// ABOUT.ME</span>
+                    <h2 class="section-title split-text">
+                        <span>About Me</span>
+                    </h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card glass" data-reveal="left" data-reveal-delay="100">
+                        <div class="card-header">
+                            <span class="card-icon">⚡</span>
+                            <h3>Profile</h3>
+                        </div>
+                        <p>IT Administrator and DevOps Engineer with 5+ years of experience designing, implementing, and managing cloud infrastructure. Specialized in AWS, Azure, and network automation. Currently advancing expertise through AWS Solutions Architect, Azure Administrator, CCNA, and Azure DevOps certifications.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">GitOps</span>
+                        </div>
+                    </div>
+                    <div class="about-card glass" data-reveal="right" data-reveal-delay="200">
+                        <div class="card-header">
+                            <span class="card-icon">🎯</span>
+                            <h3>Focus Areas</h3>
+                        </div>
+                        <div class="focus-list">
+                            <div class="focus-item">
+                                <span class="focus-icon">▸</span>
+                                <div>
+                                    <strong>Cloud Architecture</strong>
+                                    <span>Multi-cloud strategies & migration</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <span class="focus-icon">▸</span>
+                                <div>
+                                    <strong>Infrastructure as Code</strong>
+                                    <span>Terraform, Bicep, ARM templates</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <span class="focus-icon">▸</span>
+                                <div>
+                                    <strong>Automation & Scripting</strong>
+                                    <span>PowerShell, Bash, Python, Go</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <span class="focus-icon">▸</span>
+                                <div>
+                                    <strong>Observability</strong>
+                                    <span>Prometheus, Grafana, Datadog, ELK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-card glass featured" data-reveal data-reveal-delay="300">
+                        <div class="card-header">
+                            <span class="card-icon">🏆</span>
+                            <h3>Current Certifications</h3>
+                        </div>
+                        <div class="cert-progress">
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <span class="cert-name">AWS Solutions Architect Associate</span>
+                                    <span class="cert-status">In Progress</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <span class="cert-name">Azure Administrator (AZ-104)</span>
+                                    <span class="cert-status">In Progress</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <span class="cert-name">CCNA (200-301)</span>
+                                    <span class="cert-status">Studying</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress: 45%"></div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <span class="cert-name">Azure DevOps Engineer (AZ-400)</span>
+                                    <span class="cert-status">Planned</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section certifications">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// CERTIFICATIONS</span>
+                    <h2 class="section-title split-text">
+                        <span>Certifications & Badges</span>
+                    </h2>
+                </div>
+                <div class="certs-grid">
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="100">
+                        <div class="cert-glow"></div>
+                        <div class="cert-header">
+                            <img src="https://images.credly.com/images/9d7c1b7f-4c5a-4b8a-9f1e-8c7d6e5f4a3b/aws-saa.png" alt="AWS" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
+                            <span class="cert-provider">Amazon Web Services</span>
+                        </div>
+                        <h3 class="cert-name">Solutions Architect Associate</h3>
+                        <p class="cert-desc">Design distributed systems on AWS</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Target: Q4 2026</span>
+                            <span class="cert-level">Associate</span>
+                        </div>
+                        <div class="cert-skills">
+                            <span>EC2</span><span>S3</span><span>VPC</span><span>RDS</span><span>Lambda</span><span>CloudFormation</span>
+                        </div>
+                    </article>
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="200">
+                        <div class="cert-glow"></div>
+                        <div class="cert-header">
+                            <img src="https://learn.microsoft.com/en-us/credentials/media/azure-administrator-badge.png" alt="Azure" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
+                            <span class="cert-provider">Microsoft Azure</span>
+                        </div>
+                        <h3 class="cert-name">Azure Administrator (AZ-104)</h3>
+                        <p class="cert-desc">Manage Azure identities & governance</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Target: Q3 2026</span>
+                            <span class="cert-level">Associate</span>
+                        </div>
+                        <div class="cert-skills">
+                            <span>Entra ID</span><span>RBAC</span><span>Storage</span><span>Networking</span><span>Monitor</span><span>Backup</span>
+                        </div>
+                    </article>
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="300">
+                        <div class="cert-glow"></div>
+                        <div class="cert-header">
+                            <img src="https://www.cisco.com/c/dam/global/en_mx/assets/logos/cisco-certified-network-associate.svg" alt="CCNA" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>'">
+                            <span class="cert-provider">Cisco</span>
+                        </div>
+                        <h3 class="cert-name">CCNA (200-301)</h3>
+                        <p class="cert-desc">Network fundamentals & automation</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Target: Q2 2026</span>
+                            <span class="cert-level">Associate</span>
+                        </div>
+                        <div class="cert-skills">
+                            <span>Routing</span><span>Switching</span><span>VLAN</span><span>OSPF</span><span>Python</span><span>Ansible</span>
+                        </div>
+                    </article>
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="400">
+                        <div class="cert-glow"></div>
+                        <div class="cert-header">
+                            <img src="https://learn.microsoft.com/en-us/credentials/media/azure-devops-engineer-badge.png" alt="Azure DevOps" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙</text></svg>'">
+                            <span class="cert-provider">Microsoft Azure</span>
+                        </div>
+                        <h3 class="cert-name">Azure DevOps Engineer (AZ-400)</h3>
+                        <p class="cert-desc">DevOps practices & GitHub Actions</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Target: Q1 2027</span>
+                            <span class="cert-level">Expert</span>
+                        </div>
+                        <div class="cert-skills">
+                            <span>Pipelines</span><span>Repos</span><span>Artifacts</span><span>Boards</span><span>GitHub</span><span>Security</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// SKILLS.CONFIG</span>
+                    <h2 class="section-title split-text">
+                        <span>Technical Skills</span>
+                    </h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category glass" data-reveal="left" data-reveal-delay="100">
+                        <div class="category-header">
+                            <span class="category-icon">☁</span>
+                            <h3>Cloud Platforms</h3>
+                        </div>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="AWS" data-level="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">AWS</span>
+                                    <span class="skill-value counter" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Azure" data-level="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Azure</span>
+                                    <span class="skill-value counter" data-target="80">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="GCP" data-level="45">
+                                <div class="skill-info">
+                                    <span class="skill-name">GCP</span>
+                                    <span class="skill-value counter" data-target="45">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 45%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category glass" data-reveal="right" data-reveal-delay="200">
+                        <div class="category-header">
+                            <span class="category-icon">⚙</span>
+                            <h3>DevOps & Automation</h3>
+                        </div>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="Docker" data-level="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-value counter" data-target="90">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Kubernetes" data-level="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">Kubernetes</span>
+                                    <span class="skill-value counter" data-target="75">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Terraform" data-level="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Terraform</span>
+                                    <span class="skill-value counter" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Ansible" data-level="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Ansible</span>
+                                    <span class="skill-value counter" data-target="80">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="CI/CD" data-level="88">
+                                <div class="skill-info">
+                                    <span class="skill-name">CI/CD Pipelines</span>
+                                    <span class="skill-value counter" data-target="88">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="GitOps" data-level="70">
+                                <div class="skill-info">
+                                    <span class="skill-name">GitOps (ArgoCD/Flux)</span>
+                                    <span class="skill-value counter" data-target="70">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category glass" data-reveal="left" data-reveal-delay="300">
+                        <div class="category-header">
+                            <span class="category-icon">💻</span>
+                            <h3>Scripting & Languages</h3>
+                        </div>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="Bash" data-level="95">
+                                <div class="skill-info">
+                                    <span class="skill-name">Bash/Shell</span>
+                                    <span class="skill-value counter" data-target="95">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="PowerShell" data-level="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">PowerShell</span>
+                                    <span class="skill-value counter" data-target="90">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Python" data-level="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-value counter" data-target="80">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Go" data-level="55">
+                                <div class="skill-info">
+                                    <span class="skill-name">Go</span>
+                                    <span class="skill-value counter" data-target="55">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 55%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category glass" data-reveal="right" data-reveal-delay="400">
+                        <div class="category-header">
+                            <span class="category-icon">🔧</span>
+                            <h3>Infrastructure & Tools</h3>
+                        </div>
+                        <div class="skill-bars">
+                            <div class="skill-bar" data-skill="Linux" data-level="95">
+                                <div class="skill-info">
+                                    <span class="skill-name">Linux Admin</span>
+                                    <span class="skill-value counter" data-target="95">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Windows" data-level="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Windows Server</span>
+                                    <span class="skill-value counter" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Networking" data-level="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Networking (CCNA)</span>
+                                    <span class="skill-value counter" data-target="80">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar" data-skill="Monitoring" data-level="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Observability</span>
+                                    <span class="skill-value counter" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-track">
+                                    <div class="skill-fill" style="--level: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// PROJECTS.LOG</span>
+                    <h2 class="section-title split-text">
+                        <span>Featured Projects</span>
+                    </h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card glass tilt-card" data-tilt data-reveal data-reveal-delay="100">
+                        <div class="project-glow"></div>
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg viewBox="0 0 100 100" class="project-icon">
+                                    <rect x="10" y="20" width="80" height="60" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="15" y="25" width="70" height="10" rx="2" fill="currentColor" opacity="0.3"/>
+                                    <rect x="15" y="40" width="40" height="8" rx="2" fill="currentColor" opacity="0.5"/>
+                                    <rect x="15" y="55" width="60" height="8" rx="2" fill="currentColor" opacity="0.5"/>
+                                    <rect x="15" y="70" width="30" height="8" rx="2" fill="currentColor" opacity="0.5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
+                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type">Infrastructure</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-title">Multi-Cloud IaC Framework</h3>
+                            <p class="project-desc">Terraform modules for deploying consistent infrastructure across AWS, Azure, and GCP with automated testing pipelines.</p>
+                            <div class="project-tech">
+                                <span>Terraform</span><span>AWS</span><span>Azure</span><span>GitHub Actions</span><span>Terratest</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card glass tilt-card" data-tilt data-reveal data-reveal-delay="200">
+                        <div class="project-glow"></div>
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg viewBox="0 0 100 100" class="project-icon">
+                                    <circle cx="50" cy="35" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M50 50 L50 80" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="30" cy="70" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="70" cy="70" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="70" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
+                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type">Automation</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-title">K8s Cluster Bootstrap</h3>
+                            <p class="project-desc">Automated Kubernetes cluster provisioning with ArgoCD, monitoring stack, and GitOps workflows using Terraform and Helm.</p>
+                            <div class="project-tech">
+                                <span>Kubernetes</span><span>ArgoCD</span><span>Prometheus</span><span>Helm</span><span>Terraform</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card glass tilt-card" data-tilt data-reveal data-reveal-delay="300">
+                        <div class="project-glow"></div>
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg viewBox="0 0 100 100" class="project-icon">
+                                    <rect x="10" y="15" width="80" height="70" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="15" y1="35" x2="85" y2="35" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="20" y="45" width="25" height="25" rx="3" fill="currentColor" opacity="0.3"/>
+                                    <rect x="55" y="45" width="25" height="25" rx="3" fill="currentColor" opacity="0.3"/>
+                                    <line x1="32.5" y1="75" x2="67.5" y2="75" stroke="currentColor" stroke-width="2" stroke-dasharray="5,5"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
+                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type">Networking</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title">Network Automation Suite</h3>
+                            <p class="project-desc">Python/Ansible collection for network device configuration, backup, compliance checking, and automated remediation.</p>
+                            <div class="project-tech">
+                                <span>Python</span><span>Ansible</span><span>NAPALM</span><span>NetBox</span><span>Jinja2</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card glass tilt-card" data-tilt data-reveal data-reveal-delay="400">
+                        <div class="project-glow"></div>
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg viewBox="0 0 100 100" class="project-icon">
+                                    <rect x="15" y="20" width="70" height="60" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="40" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M50 28 L50 36 M44 40 L56 40" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="30" y="60" width="40" height="8" rx="4" fill="currentColor" opacity="0.3"/>
+                                    <rect x="30" y="60" width="28" height="8" rx="4" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
+                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type">CI/CD</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title">Pipeline Template Library</h3>
+                            <p class="project-desc">Reusable GitHub Actions and Azure DevOps pipeline templates for microservices, infrastructure, and security scanning.</p>
+                            <div class="project-tech">
+                                <span>GitHub Actions</span><span>Azure DevOps</span><span>SonarQube</span><span>Trivy</span><span>Dependabot</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card glass tilt-card" data-tilt data-reveal data-reveal-delay="500">
+                        <div class="project-glow"></div>
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg viewBox="0 0 100 100" class="project-icon">
+                                    <path d="M20 80 L50 20 L80 80" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="35" y1="55" x2="65" y2="55" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="55" r="5" fill="currentColor"/>
+                                    <rect x="45" y="70" width="10" height="10" rx="2" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
+                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type">Monitoring</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3 class="project-title">Observability Stack</h3>
+                            <p class="project-desc">Complete monitoring solution with Prometheus, Grafana, Loki, Tempo for metrics, logs, and distributed tracing.</p>
+                            <div class="project-tech">
+                                <span>Prometheus</span><span>Grafana</span><span>Loki</span><span>Tempo</span><span>OpenTelemetry</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card glass tilt-card" data-tilt data-reveal data-reveal-delay="600">
+                        <div class="project-glow"></div>
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <svg viewBox="0 0 100 100" class="project-icon">
+                                    <rect x="20" y="30" width="60" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="25" y="35" width="50" height="8" rx="2" fill="currentColor" opacity="0.3"/>
+                                    <rect x="25" y="48" width="30" height="6" rx="2" fill="currentColor" opacity="0.5"/>
+                                    <rect x="25" y="58" width="40" height="6" rx="2" fill="currentColor" opacity="0.5"/>
+                                    <path d="M50 20 L50 30" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="50" cy="15" r="5" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
+                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type">Security</span>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <h3 class="project-title">Compliance Automation</h3>
+                            <p class="project-desc">Automated CIS benchmark scanning, policy enforcement with OPA/Gatekeeper, and remediation playbooks for cloud resources.</p>
+                            <div class="project-tech">
+                                <span>OPA</span><span>Gatekeeper</span><span>CIS</span><span>Kyverno</span><span>Terraform</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section blog">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// BLOG.LOG</span>
+                    <h2 class="section-title split-text">
+                        <span>Writeups & Notes</span>
+                    </h2>
+                </div>
+                <div class="blog-grid">
+                    <article class="blog-card glass" data-reveal data-reveal-delay="100">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Cloud</span>
+                            <span class="blog-date">Jul 2026</span>
+                        </div>
+                        <h3 class="blog-title">Terraform State Management: Remote Backends That Don't Bite</h3>
+                        <p class="blog-excerpt">How I structure S3 + DynamoDB state backends, locking, and team workflows for multi-cloud infrastructure.</p>
+                        <div class="blog-footer">
+                            <span class="blog-read">5 min read</span>
+                            <a href="#" class="blog-link">Read →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card glass" data-reveal data-reveal-delay="200">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Kubernetes</span>
+                            <span class="blog-date">Jun 2026</span>
+                        </div>
+                        <h3 class="blog-title">GitOps with ArgoCD: My 3-Month Learning Takeaways</h3>
+                        <p class="blog-excerpt">Sync strategies, app-of-apps patterns, and the mistakes I made so you don't have to.</p>
+                        <div class="blog-footer">
+                            <span class="blog-read">8 min read</span>
+                            <a href="#" class="blog-link">Read →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card glass" data-reveal data-reveal-delay="300">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Networking</span>
+                            <span class="blog-date">May 2026</span>
+                        </div>
+                        <h3 class="blog-title">CCNA Study Plan: From Zero to Exam Ready in 4 Months</h3>
+                        <p class="blog-excerpt">My lab setup, study resources, and the order I tackled each domain on the 200-301 exam.</p>
+                        <div class="blog-footer">
+                            <span class="blog-read">6 min read</span>
+                            <a href="#" class="blog-link">Read →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// CONNECT.SSH</span>
+                    <h2 class="section-title split-text">
+                        <span>Get In Touch</span>
+                    </h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info glass" data-reveal="left">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email</h3>
+                            <a href="mailto:hamadtariq504@gmail.com">hamadtariq504@gmail.com</a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">💼</div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/itsmehamad/" target="_blank">linkedin.com/in/itsmehamad</a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">🐙</div>
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/hamadtariq" target="_blank">github.com/hamadtariq</a>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <h3>Location</h3>
+                            <span>Available for Remote / Hybrid</span>
+                        </div>
+                    </div>
+                    <form class="contact-form glass" id="contactForm" data-reveal="right" data-reveal-delay="200">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="focus-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="focus-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <span class="focus-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="focus-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary magnetic" data-magnetic>
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon">⏎</span>
+                        </button>
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">HAMAD TARIQ</span>
+                    <p>IT Administrator & DevOps Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/hamadtariq" target="_blank" class="footer-link magnetic" data-magnetic>GitHub</a>
+                    <a href="https://www.linkedin.com/in/itsmehamad/" target="_blank" class="footer-link magnetic" data-magnetic>LinkedIn</a>
+                    <a href="mailto:hamadtariq504@gmail.com" class="footer-link magnetic" data-magnetic>Email</a>
+                </div>
+                <p class="footer-copyright">© 2026 HAMAD TARIQ. Built with ⚡ and lots of ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

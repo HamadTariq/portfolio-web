@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0a0a0f"/>
+            <stop offset="0.5" stop-color="#101018"/>
+            <stop offset="1" stop-color="#0a0a0f"/>
+        </linearGradient>
+        <radialGradient id="glow1" cx="0.2" cy="0.3" r="0.5">
+            <stop offset="0" stop-color="#00ff9d" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#00ff9d" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="glow2" cx="0.85" cy="0.7" r="0.5">
+            <stop offset="0" stop-color="#00d4ff" stop-opacity="0.3"/>
+            <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    <rect width="1200" height="630" fill="url(#bg)"/>
+    <rect width="1200" height="630" fill="url(#glow1)"/>
+    <rect width="1200" height="630" fill="url(#glow2)"/>
+    <g stroke="#00ff9d" stroke-opacity="0.06">
+        <line x1="0" y1="120" x2="1200" y2="120"/>
+        <line x1="0" y1="240" x2="1200" y2="240"/>
+        <line x1="0" y1="360" x2="1200" y2="360"/>
+        <line x1="0" y1="480" x2="1200" y2="480"/>
+        <line x1="240" y1="0" x2="240" y2="630"/>
+        <line x1="480" y1="0" x2="480" y2="630"/>
+        <line x1="720" y1="0" x2="720" y2="630"/>
+        <line x1="960" y1="0" x2="960" y2="630"/>
+    </g>
+    <rect x="70" y="240" width="1060" height="160" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="100" y="295" font-family="monospace" font-size="30" fill="#00ff9d">&gt; whoami</text>
+    <text x="100" y="365" font-family="monospace" font-size="44" font-weight="bold" fill="#e8e8ee">HAMAD TARIQ</text>
+    <text x="100" y="430" font-family="monospace" font-size="28" fill="#00d4ff">IT Administrator &amp; DevOps Engineer</text>
+    <text x="100" y="540" font-family="monospace" font-size="22" fill="#a0a0b0">AWS Solutions Architect | Azure Administrator | CCNA | Azure DevOps</text>
+</svg>
