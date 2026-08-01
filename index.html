@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            document.documentElement.dataset.theme = t;
+        })();
+    </script>
     <meta name="description" content="Hamad Tariq — IT Administrator & DevOps Engineer. Cloud infrastructure, automation, and networking. AWS Solutions Architect, Azure Administrator, CCNA, Azure DevOps certifications in progress.">
     <meta name="author" content="Hamad Tariq">
     <meta name="theme-color" content="#0a0a0f">
@@ -11,15 +18,18 @@
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Hamad Tariq | IT Admin & DevOps Engineer">
     <meta property="og:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking. Check out my certifications and projects.">
-    <meta property="og:image" content="og-image.svg">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:url" content="https://hamadtariq.github.io/portfolio_web/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hamad Tariq | IT Admin & DevOps Engineer">
     <meta name="twitter:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking.">
-    <meta name="twitter:image" content="og-image.svg">
+    <meta name="twitter:image" content="og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
@@ -43,6 +53,7 @@
     </div>
 
     <canvas id="particles-canvas"></canvas>
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <div class="gradient-bg">
         <div class="gradient-orb orb-1" data-parallax="0.3"></div>
@@ -51,11 +62,13 @@
     </div>
 
     <nav class="navbar" id="navbar">
+        <div class="nav-backdrop" id="navBackdrop"></div>
         <div class="nav-container">
             <a href="#" class="nav-logo" data-text="HAMAD TARIQ">HAMAD TARIQ</a>
             <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-link" data-text="HOME">HOME</a>
                 <a href="#about" class="nav-link" data-text="ABOUT">ABOUT</a>
+                <a href="#experience" class="nav-link" data-text="EXPERIENCE">EXPERIENCE</a>
                 <a href="#certifications" class="nav-link" data-text="CERTS">CERTS</a>
                 <a href="#skills" class="nav-link" data-text="SKILLS">SKILLS</a>
                 <a href="#projects" class="nav-link" data-text="PROJECTS">PROJECTS</a>
@@ -93,7 +106,7 @@
                         </div>
                         <div class="terminal-title">portfolio.sh</div>
                     </div>
-                    <div class="terminal-body">
+                    <div class="terminal-body" role="log" aria-live="polite">
                         <div class="terminal-line">
                             <span class="prompt">$</span>
                             <span class="command"> whoami</span>
@@ -156,8 +169,8 @@
                         <div class="stat-label">Certifications</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value counter" data-target="50">0</div>
-                        <div class="stat-label">Projects</div>
+                        <div class="stat-value counter" data-target="6">0</div>
+                        <div class="stat-label">Featured Projects</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value counter" data-target="99">0</div>
@@ -276,6 +289,58 @@
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="--progress: 20%"></div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section experience">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-tag">// EXPERIENCE.LOG</span>
+                    <h2 class="section-title split-text">
+                        <span>Experience</span>
+                    </h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item glass" data-reveal="left" data-reveal-delay="100">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-role">IT Administrator & DevOps Engineer</span>
+                                <span class="timeline-date">2021 — Present</span>
+                            </div>
+                            <p class="timeline-desc">Designing and managing cloud infrastructure across AWS and Azure, automating deployments with Terraform and Ansible, and maintaining CI/CD pipelines and GitOps workflows for production systems.</p>
+                            <div class="timeline-tags">
+                                <span>AWS</span><span>Azure</span><span>Terraform</span><span>Docker</span><span>Kubernetes</span><span>CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass" data-reveal="right" data-reveal-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-role">Systems Administrator</span>
+                                <span class="timeline-date">2019 — 2021</span>
+                            </div>
+                            <p class="timeline-desc">Administered Linux and Windows Server estates, Active Directory and Entra ID, network infrastructure, backup and disaster recovery, and monitoring with Prometheus and Grafana.</p>
+                            <div class="timeline-tags">
+                                <span>Linux</span><span>Windows Server</span><span>AD</span><span>Networking</span><span>Backup</span><span>Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass" data-reveal="left" data-reveal-delay="300">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-meta">
+                                <span class="timeline-role">IT Support Specialist</span>
+                                <span class="timeline-date">2018 — 2019</span>
+                            </div>
+                            <p class="timeline-desc">Provided end-user support, device management, and IT asset tracking while building the scripting and automation foundation used across later roles.</p>
+                            <div class="timeline-tags">
+                                <span>Support</span><span>Scripting</span><span>Asset Mgmt</span><span>Automation</span>
                             </div>
                         </div>
                     </div>
@@ -581,7 +646,6 @@
                             </div>
                             <div class="project-overlay">
                                 <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
-                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -610,7 +674,6 @@
                             </div>
                             <div class="project-overlay">
                                 <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
-                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -639,7 +702,6 @@
                             </div>
                             <div class="project-overlay">
                                 <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
-                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -668,7 +730,6 @@
                             </div>
                             <div class="project-overlay">
                                 <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
-                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -696,7 +757,6 @@
                             </div>
                             <div class="project-overlay">
                                 <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
-                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -726,7 +786,6 @@
                             </div>
                             <div class="project-overlay">
                                 <a href="https://github.com/hamadtariq" target="_blank" class="btn btn-sm magnetic" data-magnetic>View Code</a>
-                                <a href="#" class="btn btn-sm btn-outline magnetic" data-magnetic>Live Demo</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -741,6 +800,21 @@
                             </div>
                         </div>
                     </article>
+                </div>
+                <div class="projects-footer" data-reveal>
+                    <a href="https://github.com/hamadtariq?tab=repositories" target="_blank" class="btn btn-secondary magnetic" data-magnetic>
+                        <span class="btn-text">View All on GitHub</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                </div>
+                <div class="github-section" id="githubSection" hidden>
+                    <div class="section-header github-header" data-reveal>
+                        <span class="section-tag">// RECENT GITHUB ACTIVITY</span>
+                        <h2 class="section-title split-text">
+                            <span>Latest Repos</span>
+                        </h2>
+                    </div>
+                    <div class="github-grid" id="githubRepos"></div>
                 </div>
             </div>
         </section>
@@ -763,7 +837,7 @@
                         <p class="blog-excerpt">How I structure S3 + DynamoDB state backends, locking, and team workflows for multi-cloud infrastructure.</p>
                         <div class="blog-footer">
                             <span class="blog-read">5 min read</span>
-                            <a href="#" class="blog-link">Read →</a>
+                            <span class="blog-link is-soon">Coming soon</span>
                         </div>
                     </article>
                     <article class="blog-card glass" data-reveal data-reveal-delay="200">
@@ -775,7 +849,7 @@
                         <p class="blog-excerpt">Sync strategies, app-of-apps patterns, and the mistakes I made so you don't have to.</p>
                         <div class="blog-footer">
                             <span class="blog-read">8 min read</span>
-                            <a href="#" class="blog-link">Read →</a>
+                            <span class="blog-link is-soon">Coming soon</span>
                         </div>
                     </article>
                     <article class="blog-card glass" data-reveal data-reveal-delay="300">
@@ -787,7 +861,7 @@
                         <p class="blog-excerpt">My lab setup, study resources, and the order I tackled each domain on the 200-301 exam.</p>
                         <div class="blog-footer">
                             <span class="blog-read">6 min read</span>
-                            <a href="#" class="blog-link">Read →</a>
+                            <span class="blog-link is-soon">Coming soon</span>
                         </div>
                     </article>
                 </div>
@@ -806,8 +880,11 @@
                     <div class="contact-info glass" data-reveal="left">
                         <div class="contact-card">
                             <div class="contact-icon">📧</div>
-                            <h3>Email</h3>
-                            <a href="mailto:hamadtariq504@gmail.com">hamadtariq504@gmail.com</a>
+                            <div class="contact-body">
+                                <h3>Email</h3>
+                                <a href="mailto:hamadtariq504@gmail.com">hamadtariq504@gmail.com</a>
+                            </div>
+                            <button class="copy-btn" id="copyEmail" aria-label="Copy email address" title="Copy email">⧉</button>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon">💼</div>
@@ -874,10 +951,9 @@
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

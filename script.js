@@ -85,19 +85,11 @@
                 touchMultiplier: 1.5,
             });
 
-            if (window.gsap) {
-                this.lenis.on('scroll', ScrollTrigger.update);
-                gsap.ticker.add((time) => {
-                    this.lenis.raf(time * 1000);
-                });
-                gsap.ticker.lagSmoothing(0);
-            } else {
-                const raf = (time) => {
-                    this.lenis.raf(time);
-                    requestAnimationFrame(raf);
-                };
+            const raf = (time) => {
+                this.lenis.raf(time);
                 requestAnimationFrame(raf);
-            }
+            };
+            requestAnimationFrame(raf);
         }
 
         fallback() {
@@ -113,6 +105,14 @@
                 el.scrollIntoView({ behavior: 'smooth' });
             }
         }
+
+        scrollTop() {
+            if (this.lenis) {
+                this.lenis.scrollTo(0, { duration: 1.5 });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
     }
 
     /* ===== CUSTOM CURSOR ===== */
@@ -125,6 +125,7 @@
             this.ringPos = { x: this.pos.x, y: this.pos.y };
             this.dotPos = { x: this.pos.x, y: this.pos.y };
             this.visible = false;
+            this.pressed = false;
             this.rafId = null;
             this.init();
         }
@@ -145,13 +146,11 @@
             });
 
             window.addEventListener('mousedown', () => {
-                this.ring.style.transform += ' scale(0.8)';
-                this.dot.style.transform += ' scale(0.8)';
+                this.pressed = true;
             });
 
             window.addEventListener('mouseup', () => {
-                this.ring.style.transform = this.ring.style.transform.replace(' scale(0.8)', '');
-                this.dot.style.transform = this.dot.style.transform.replace(' scale(0.8)', '');
+                this.pressed = false;
             });
 
             document.addEventListener('mouseleave', () => {
@@ -177,14 +176,15 @@
 
         animate() {
             const lerp = (start, end, amount) => start + (end - start) * amount;
+            const scale = this.pressed ? 0.8 : 1;
 
             this.ringPos.x = lerp(this.ringPos.x, this.pos.x, 0.18);
             this.ringPos.y = lerp(this.ringPos.y, this.pos.y, 0.18);
             this.dotPos.x = lerp(this.dotPos.x, this.pos.x, 0.5);
             this.dotPos.y = lerp(this.dotPos.y, this.pos.y, 0.5);
 
-            this.ring.style.transform = `translate(${this.ringPos.x}px, ${this.ringPos.y}px) translate(-50%, -50%)`;
-            this.dot.style.transform = `translate(${this.dotPos.x}px, ${this.dotPos.y}px) translate(-50%, -50%)`;
+            this.ring.style.transform = `translate(${this.ringPos.x}px, ${this.ringPos.y}px) translate(-50%, -50%) scale(${scale})`;
+            this.dot.style.transform = `translate(${this.dotPos.x}px, ${this.dotPos.y}px) translate(-50%, -50%) scale(${scale})`;
 
             this.rafId = requestAnimationFrame(() => this.animate());
         }
@@ -270,14 +270,16 @@
         }
 
         resize() {
-            this.canvas.width = window.innerWidth;
-            this.canvas.height = window.innerHeight;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            this.canvas.width = window.innerWidth * dpr;
+            this.canvas.height = window.innerHeight * dpr;
+            this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         }
 
         createParticle() {
             return {
-                x: Math.random() * this.canvas.width,
-                y: Math.random() * this.canvas.height,
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
                 vx: (Math.random() - 0.5) * 0.4,
                 vy: (Math.random() - 0.5) * 0.4,
                 radius: Math.random() * 2 + 0.5,
@@ -295,8 +297,8 @@
                 p.y += p.vy;
                 p.pulse += 0.02;
 
-                if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+                if (p.x < 0 || p.x > window.innerWidth) p.vx *= -1;
+                if (p.y < 0 || p.y > window.innerHeight) p.vy *= -1;
 
                 const dx = p.x - this.mouse.x;
                 const dy = p.y - this.mouse.y;
@@ -358,9 +360,21 @@
         init() {
             if (this.toggle) {
                 this.toggle.addEventListener('click', () => {
-                    this.toggle.classList.toggle('active');
-                    this.links.classList.toggle('open');
+                    if (this.links.classList.contains('open')) {
+                        this.close();
+                    } else {
+                        this.open();
+                    }
                 });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') this.close();
+            });
+
+            const backdrop = document.getElementById('navBackdrop');
+            if (backdrop) {
+                backdrop.addEventListener('click', () => this.close());
             }
 
             this.links.querySelectorAll('a').forEach((link) => {
@@ -368,10 +382,22 @@
                     e.preventDefault();
                     const target = link.getAttribute('href');
                     this.scrollManager.scrollTo(target);
-                    this.toggle.classList.remove('active');
-                    this.links.classList.remove('open');
+                    this.close();
                 });
             });
+        }
+
+        open() {
+            this.toggle.classList.add('active');
+            this.links.classList.add('open');
+            document.body.classList.add('menu-open');
+        }
+
+        close() {
+            if (!this.links.classList.contains('open')) return;
+            this.toggle.classList.remove('active');
+            this.links.classList.remove('open');
+            document.body.classList.remove('menu-open');
         }
 
         onScroll() {
@@ -588,27 +614,11 @@
         init() {
             if (prefersReducedMotion) return;
 
-            if (window.gsap && window.ScrollTrigger) {
-                this.elements.forEach((el) => {
-                    const speed = parseFloat(el.dataset.parallax || 0.2);
-                    gsap.to(el, {
-                        yPercent: speed * 100,
-                        ease: 'none',
-                        scrollTrigger: {
-                            trigger: el.closest('section') || el,
-                            start: 'top bottom',
-                            end: 'bottom top',
-                            scrub: 1,
-                        },
-                    });
-                });
-                return;
-            }
-
             window.addEventListener('scroll', () => {
                 this.elements.forEach((el) => {
                     const speed = parseFloat(el.dataset.parallax || 0.2);
-                    const rect = el.closest('section').getBoundingClientRect();
+                    const section = el.closest('section') || document.body;
+                    const rect = section.getBoundingClientRect();
                     const center = window.innerHeight / 2;
                     const offset = (rect.top + rect.height / 2 - center) * speed * 0.1;
                     el.style.transform = `translateY(${offset}px)`;
@@ -721,14 +731,15 @@
             if (!this.input) return;
             this.outputContainer = this.input.closest('.terminal-body');
             this.commands = {
-                help: 'Available commands:\n  whoami   - about me\n  skills   - tech stack\n  certs    - certifications\n  projects - featured work\n  contact  - reach me\n  blog     - my writeups\n  cd <s>   - jump to a section\n  ls       - list sections\n  theme    - toggle theme\n  date     - current date\n  github   - open my GitHub\n  linkedin - open my LinkedIn\n  email    - email me\n  clear    - clear terminal\n  exit     - close session',
+                help: 'Available commands:\n  whoami     - about me\n  skills     - tech stack\n  experience - work history\n  certs      - certifications\n  projects   - featured work\n  contact    - reach me\n  blog       - my writeups\n  cd <s>     - jump to a section\n  ls         - list sections\n  theme      - toggle theme\n  date       - current date\n  github     - open my GitHub\n  linkedin   - open my LinkedIn\n  email      - email me\n  clear      - clear terminal\n  exit       - close session',
                 whoami: 'Hamad Tariq\nIT Administrator & DevOps Engineer\n5+ years keeping infrastructure running & shipping automation',
+                experience: '2021-Present  IT Administrator & DevOps Engineer\n2019-2021     Systems Administrator\n2018-2019     IT Support Specialist\n\nTry: cd experience',
                 skills: 'Cloud:      AWS, Azure, GCP\nContainers:  Docker, Kubernetes\nIaC:         Terraform, Ansible, CloudFormation, Bicep\nCI/CD:       GitHub Actions, Azure DevOps, ArgoCD\nScripting:   Bash, PowerShell, Python, Go\nNetworking:  Routing, Switching, VLANs (CCNA track)\nObserv:      Prometheus, Grafana, ELK',
                 certs: 'AWS Solutions Architect Associate .. 75% (in progress)\nAzure Administrator AZ-104 ....... 60% (in progress)\nCCNA 200-301 ..................... 45% (studying)\nAzure DevOps Engineer AZ-400 ..... 20% (planned)',
                 projects: '1. Multi-Cloud IaC Framework\n2. K8s Cluster Bootstrap\n3. Network Automation Suite\n4. Pipeline Template Library\n5. Observability Stack\n6. Compliance Automation\n\nTry: cd projects',
                 contact: `email:    ${CONFIG.email}\nlinkedin: ${CONFIG.linkedin}\ngithub:   ${CONFIG.github}\n\nTry: email / linkedin / github`,
                 blog: 'My writeups live in the blog section below. More coming soon.',
-                ls: 'home  about  certifications  skills  projects  blog  contact',
+                ls: 'home  about  experience  certifications  skills  projects  blog  contact',
                 sudo: 'nice try. you are already root.',
                 clear: '__CLEAR__',
                 exit: 'this is my portfolio. you cannot leave. but you can contact me!',
@@ -769,7 +780,7 @@
         execute(raw) {
             const args = raw.split(/\s+/);
             const cmd = args[0].toLowerCase();
-            const sections = { home: '#home', about: '#about', certs: '#certifications', certifications: '#certifications', skills: '#skills', projects: '#projects', blog: '#blog', contact: '#contact' };
+            const sections = { home: '#home', about: '#about', experience: '#experience', certs: '#certifications', certifications: '#certifications', skills: '#skills', projects: '#projects', blog: '#blog', contact: '#contact' };
 
             if (cmd === 'clear') {
                 this.printOutput('__CLEAR__');
@@ -782,7 +793,7 @@
                     this.printOutput(`navigating to ${target.slice(1)}...`);
                     this.scrollManager.scrollTo(target);
                 } else {
-                    this.printOutput('usage: cd <home|about|certs|skills|projects|blog|contact>');
+                    this.printOutput('usage: cd <home|about|experience|certs|skills|projects|blog|contact>');
                 }
                 return;
             }
@@ -853,6 +864,129 @@
         }
     }
 
+    /* ===== SCROLL PROGRESS BAR ===== */
+    class ScrollProgress {
+        constructor() {
+            this.bar = document.getElementById('scrollProgress');
+            if (!this.bar) return;
+            this.update();
+            window.addEventListener('scroll', () => this.update(), { passive: true });
+        }
+
+        update() {
+            const doc = document.documentElement;
+            const max = doc.scrollHeight - doc.clientHeight;
+            const pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+            this.bar.style.width = pct + '%';
+        }
+    }
+
+    /* ===== BACK TO TOP ===== */
+    class BackToTop {
+        constructor(scrollManager) {
+            this.btn = document.getElementById('backToTop');
+            if (!this.btn) return;
+            this.btn.addEventListener('click', () => scrollManager.scrollTop());
+            window.addEventListener('scroll', () => {
+                this.btn.classList.toggle('visible', window.scrollY > 600);
+            }, { passive: true });
+        }
+    }
+
+    /* ===== COPY EMAIL ===== */
+    class CopyEmail {
+        constructor() {
+            this.btn = document.getElementById('copyEmail');
+            if (!this.btn) return;
+            this.email = CONFIG.email;
+            this.btn.addEventListener('click', () => this.copy());
+        }
+
+        copy() {
+            const done = () => {
+                const original = this.btn.innerHTML;
+                this.btn.innerHTML = '✓';
+                this.btn.classList.add('copied');
+                setTimeout(() => {
+                    this.btn.innerHTML = original;
+                    this.btn.classList.remove('copied');
+                }, 1600);
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(this.email).then(done).catch(() => this.fallback(done));
+            } else {
+                this.fallback(done);
+            }
+        }
+
+        fallback(done) {
+            const ta = document.createElement('textarea');
+            ta.value = this.email;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                done();
+            } catch (e) { /* clipboard unavailable */ }
+            document.body.removeChild(ta);
+        }
+    }
+
+    /* ===== GITHUB REPOS ===== */
+    class GitHubRepos {
+        constructor() {
+            this.container = document.getElementById('githubRepos');
+            this.section = document.getElementById('githubSection');
+            if (!this.container) return;
+            this.fetch();
+        }
+
+        fetch() {
+            fetch('https://api.github.com/users/hamadtariq/repos?sort=updated&per_page=6')
+                .then((res) => {
+                    if (!res.ok) throw new Error('GitHub API error');
+                    return res.json();
+                })
+                .then((repos) => this.render(repos))
+                .catch(() => {
+                    if (this.section) this.section.hidden = true;
+                });
+        }
+
+        escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        render(repos) {
+            if (!Array.isArray(repos) || !repos.length) {
+                this.section.hidden = true;
+                return;
+            }
+            const filtered = repos.filter((r) => !r.fork).slice(0, 6);
+            if (!filtered.length) {
+                this.section.hidden = true;
+                return;
+            }
+
+            this.container.innerHTML = filtered.map((repo, i) => `
+                <a href="${repo.html_url}" target="_blank" rel="noopener" class="repo-card glass" style="animation-delay: ${i * 80}ms">
+                    <div class="repo-name">${this.escapeHtml(repo.name)}</div>
+                    <p class="repo-desc">${this.escapeHtml(repo.description || 'No description provided.')}</p>
+                    <div class="repo-footer">
+                        ${repo.language ? `<span class="repo-language"><span class="lang-dot"></span>${this.escapeHtml(repo.language)}</span>` : ''}
+                        <span class="repo-stars">★ ${repo.stargazers_count}</span>
+                    </div>
+                </a>
+            `).join('');
+            this.section.hidden = false;
+        }
+    }
+
     /* ===== INIT ===== */
     const init = () => {
         window.splitTextAnimator = new SplitTextAnimator();
@@ -871,6 +1005,10 @@
         new ContactForm();
         new Typewriter();
         new TerminalCommands(scrollManager);
+        new ScrollProgress();
+        new BackToTop(scrollManager);
+        new CopyEmail();
+        new GitHubRepos();
 
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.navbar').forEach((n) => {
