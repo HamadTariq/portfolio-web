@@ -9,6 +9,8 @@
         email: 'hamadtariq504@gmail.com',
         linkedin: 'https://www.linkedin.com/in/itsmehamad/',
         github: 'https://github.com/hamadtariq',
+        credlyAws: 'https://www.credly.com/badges/f1ab6d9d-f884-4465-81ea-abdf9e8103c1/public_url',
+        msLearnMd102: 'https://learn.microsoft.com/en-us/users/HamadTariq-6960/credentials/89B53038678339F2',
     };
 
     document.documentElement.classList.add('js');
@@ -731,11 +733,11 @@
             if (!this.input) return;
             this.outputContainer = this.input.closest('.terminal-body');
             this.commands = {
-                help: 'Available commands:\n  whoami     - about me\n  skills     - tech stack\n  experience - work history\n  certs      - certifications\n  projects   - featured work\n  contact    - reach me\n  blog       - my writeups\n  cd <s>     - jump to a section\n  ls         - list sections\n  theme      - toggle theme\n  date       - current date\n  github     - open my GitHub\n  linkedin   - open my LinkedIn\n  email      - email me\n  clear      - clear terminal\n  exit       - close session',
+                help: 'Available commands:\n  whoami     - about me\n  skills     - tech stack\n  experience - work history\n  certs      - certifications\n  verify <c> - open a credential (aws|ms)\n  projects   - featured work\n  contact    - reach me\n  blog       - my writeups\n  cd <s>     - jump to a section\n  ls         - list sections\n  theme      - toggle theme\n  date       - current date\n  github     - open my GitHub\n  linkedin   - open my LinkedIn\n  email      - email me\n  clear      - clear terminal\n  exit       - close session',
                 whoami: 'Hamad Tariq\nIT Administrator & DevOps Engineer\n5+ years keeping infrastructure running & shipping automation',
                 experience: 'Nov 2023 - Present   IT Administrator & DevOps Engineer\nFeb 2021 - Jun 2023  IT Support Specialist\n\nTry: cd experience',
                 skills: 'Cloud:      AWS, Azure, GCP\nContainers:  Docker, Kubernetes\nIaC:         Terraform, Ansible, CloudFormation, Bicep\nCI/CD:       GitHub Actions, Azure DevOps, ArgoCD\nScripting:   Bash, PowerShell, Python\nNetworking:  Routing, Switching, VLANs (CCNA track)\nObserv:      Prometheus, Grafana, ELK',
-                certs: 'AWS Solutions Architect Associate .. 75% (in progress)\nAzure Administrator AZ-104 ....... 60% (in progress)\nCCNA 200-301 ..................... 45% (studying)\nAzure DevOps Engineer AZ-400 ..... 20% (planned)',
+                certs: 'EARNED\n  [x] AWS Certified Solutions Architect - Associate\n      issued 09 Aug 2026 | valid to Aug 2029 | verify aws\n  [x] Microsoft 365 Certified: Endpoint Administrator Associate (MD-102)\n      issued 18 Aug 2026 | renew by Aug 2027 | verify ms\n\nSCHEDULED (Sep 2026)\n  [ ] Azure Administrator AZ-104\n  [ ] CCNA 200-301\n  [ ] Azure DevOps Engineer AZ-400\n\nTry: cd certs / verify aws / verify ms',
                 projects: '1. Multi-Cloud IaC Framework\n2. K8s Cluster Bootstrap\n3. Network Automation Suite\n4. Pipeline Template Library\n5. Observability Stack\n6. Compliance Automation\n\nTry: cd projects',
                 contact: `email:    ${CONFIG.email}\nlinkedin: ${CONFIG.linkedin}\ngithub:   ${CONFIG.github}\n\nTry: email / linkedin / github`,
                 blog: 'My writeups live in the blog section below. More coming soon.',
@@ -801,6 +803,21 @@
             if (cmd === 'theme') {
                 document.getElementById('themeToggle').click();
                 this.printOutput(`theme switched to ${document.documentElement.dataset.theme}`);
+                return;
+            }
+
+            if (cmd === 'verify') {
+                const creds = {
+                    aws: { url: CONFIG.credlyAws, label: 'AWS Solutions Architect Associate on Credly' },
+                    ms: { url: CONFIG.msLearnMd102, label: 'M365 Endpoint Administrator (MD-102) on Microsoft Learn' },
+                };
+                const cred = creds[(args[1] || '').toLowerCase()];
+                if (cred) {
+                    window.open(cred.url, '_blank', 'noopener');
+                    this.printOutput(`opening ${cred.label}...`);
+                } else {
+                    this.printOutput('usage: verify <aws|ms>');
+                }
                 return;
             }
 

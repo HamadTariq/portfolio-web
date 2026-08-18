@@ -10,14 +10,14 @@
             document.documentElement.dataset.theme = t;
         })();
     </script>
-    <meta name="description" content="Hamad Tariq — IT Administrator & DevOps Engineer. Cloud infrastructure, automation, and networking. AWS Solutions Architect, Azure Administrator, CCNA, Azure DevOps certifications in progress.">
+    <meta name="description" content="Hamad Tariq — IT Administrator & DevOps Engineer. Cloud infrastructure, automation, and networking. AWS Certified Solutions Architect – Associate and Microsoft 365 Certified: Endpoint Administrator Associate, with CCNA, AZ-104, and AZ-400 next.">
     <meta name="author" content="Hamad Tariq">
     <meta name="theme-color" content="#0a0a0f">
     <title>Hamad Tariq | IT Admin & DevOps Engineer</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="profile">
     <meta property="og:title" content="Hamad Tariq | IT Admin & DevOps Engineer">
-    <meta property="og:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking. Check out my certifications and projects.">
+    <meta property="og:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking. AWS Solutions Architect Associate & Microsoft 365 Endpoint Administrator Associate certified.">
     <meta property="og:image" content="og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -25,7 +25,7 @@
     <meta property="og:url" content="https://hamadtariq.github.io/portfolio_web/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hamad Tariq | IT Admin & DevOps Engineer">
-    <meta name="twitter:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking.">
+    <meta name="twitter:description" content="IT Administrator & DevOps Engineer — cloud infrastructure, automation, and networking. AWS SAA & Microsoft 365 Endpoint Administrator certified.">
     <meta name="twitter:image" content="og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,27 @@
             "https://www.linkedin.com/in/itsmehamad/",
             "https://github.com/hamadtariq"
         ],
-        "knowsAbout": ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "Ansible", "Networking", "CI/CD"]
+        "knowsAbout": ["AWS", "Azure", "Microsoft 365", "Intune", "Docker", "Kubernetes", "Terraform", "Ansible", "Networking", "CI/CD"],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "AWS Certified Solutions Architect – Associate",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" },
+                "dateCreated": "2026-08-09",
+                "expires": "2029-08-09",
+                "url": "https://www.credly.com/badges/f1ab6d9d-f884-4465-81ea-abdf9e8103c1/public_url"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Microsoft 365 Certified: Endpoint Administrator Associate",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Microsoft" },
+                "dateCreated": "2026-08-18",
+                "expires": "2027-08-18",
+                "url": "https://learn.microsoft.com/en-us/users/HamadTariq-6960/credentials/89B53038678339F2"
+            }
+        ]
     }
     </script>
 </head>
@@ -130,7 +150,8 @@
                             <span class="command"> cat certs.txt</span>
                         </div>
                         <div class="terminal-output certs-preview">
-                            <div class="cert-badge" data-cert="aws">AWS Solutions Architect</div>
+                            <div class="cert-badge" data-cert="aws" data-status="earned">AWS Solutions Architect ✓</div>
+                            <div class="cert-badge" data-cert="m365" data-status="earned">M365 Endpoint Admin ✓</div>
                             <div class="cert-badge" data-cert="azure">Azure Administrator</div>
                             <div class="cert-badge" data-cert="ccna">CCNA</div>
                             <div class="cert-badge" data-cert="azdo">Azure DevOps</div>
@@ -165,8 +186,8 @@
                         <div class="stat-label">Years Exp</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-value counter" data-target="4">0</div>
-                        <div class="stat-label">Certs In Progress</div>
+                        <div class="stat-value counter" data-target="2">0</div>
+                        <div class="stat-label">Certs Earned</div>
                     </div>
                     <div class="stat">
                         <div class="stat-value counter" data-target="6">0</div>
@@ -200,7 +221,7 @@
                             <span class="card-icon">⚡</span>
                             <h3>Profile</h3>
                         </div>
-                        <p>IT Administrator and DevOps Engineer with 5+ years of experience designing, implementing, and managing cloud infrastructure. Specialized in AWS, Azure, and network automation. Currently advancing expertise through AWS Solutions Architect, Azure Administrator, CCNA, and Azure DevOps certifications.</p>
+                        <p>IT Administrator and DevOps Engineer with 5+ years of experience designing, implementing, and managing cloud infrastructure. Specialized in AWS, Azure, and network automation. AWS Certified Solutions Architect – Associate and Microsoft 365 Certified: Endpoint Administrator Associate, with CCNA, AZ-104, and AZ-400 lined up next.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Linux</span>
                             <span class="tech-tag">Windows Server</span>
@@ -251,13 +272,31 @@
                     <div class="about-card glass featured" data-reveal data-reveal-delay="300">
                         <div class="card-header">
                             <span class="card-icon">🏆</span>
-                            <h3>Current Certifications</h3>
+                            <h3>Certifications</h3>
                         </div>
                         <div class="cert-progress">
                             <div class="cert-item">
                                 <div class="cert-info">
                                     <span class="cert-name">AWS Solutions Architect Associate</span>
-                                    <span class="cert-status">In Progress</span>
+                                    <span class="cert-status certified">Certified · Aug 2026</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill complete" style="--progress: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <span class="cert-name">M365 Endpoint Administrator (MD-102)</span>
+                                    <span class="cert-status certified">Certified · Aug 2026</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill complete" style="--progress: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-info">
+                                    <span class="cert-name">Azure Administrator (AZ-104)</span>
+                                    <span class="cert-status">Exam Sep 2026</span>
                                 </div>
                                 <div class="progress-bar">
                                     <div class="progress-fill" style="--progress: 75%"></div>
@@ -265,29 +304,20 @@
                             </div>
                             <div class="cert-item">
                                 <div class="cert-info">
-                                    <span class="cert-name">Azure Administrator (AZ-104)</span>
-                                    <span class="cert-status">In Progress</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="--progress: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-info">
                                     <span class="cert-name">CCNA (200-301)</span>
-                                    <span class="cert-status">Studying</span>
+                                    <span class="cert-status">Exam Sep 2026</span>
                                 </div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="--progress: 45%"></div>
+                                    <div class="progress-fill" style="--progress: 65%"></div>
                                 </div>
                             </div>
                             <div class="cert-item">
                                 <div class="cert-info">
                                     <span class="cert-name">Azure DevOps Engineer (AZ-400)</span>
-                                    <span class="cert-status">Planned</span>
+                                    <span class="cert-status">Exam Sep 2026</span>
                                 </div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="--progress: 20%"></div>
+                                    <div class="progress-fill" style="--progress: 50%"></div>
                                 </div>
                             </div>
                         </div>
@@ -343,24 +373,52 @@
                         <span>Certifications & Badges</span>
                     </h2>
                 </div>
+                <h3 class="certs-group-title" data-reveal><span class="certs-group-marker">✓</span> Earned</h3>
                 <div class="certs-grid">
-                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="100">
+                    <article class="cert-card glass tilt-card earned" data-tilt data-reveal data-reveal-delay="100">
                         <div class="cert-glow"></div>
+                        <span class="cert-ribbon">Certified</span>
                         <div class="cert-header">
-                            <img src="https://images.credly.com/images/9d7c1b7f-4c5a-4b8a-9f1e-8c7d6e5f4a3b/aws-saa.png" alt="AWS" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
+                            <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate badge" class="cert-logo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
                             <span class="cert-provider">Amazon Web Services</span>
                         </div>
                         <h3 class="cert-name">Solutions Architect Associate</h3>
                         <p class="cert-desc">Design distributed systems on AWS</p>
                         <div class="cert-meta">
-                            <span class="cert-date">Exam: Aug 2026</span>
+                            <span class="cert-date">Earned: Aug 9, 2026 · Valid to Aug 2029</span>
                             <span class="cert-level">Associate</span>
                         </div>
                         <div class="cert-skills">
                             <span>EC2</span><span>S3</span><span>VPC</span><span>RDS</span><span>Lambda</span><span>CloudFormation</span>
                         </div>
+                        <a class="cert-verify" href="https://www.credly.com/badges/f1ab6d9d-f884-4465-81ea-abdf9e8103c1/public_url" target="_blank" rel="noopener noreferrer">
+                            Verify on Credly <span class="cert-verify-icon">↗</span>
+                        </a>
                     </article>
-                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="200">
+                    <article class="cert-card glass tilt-card earned" data-tilt data-reveal data-reveal-delay="200">
+                        <div class="cert-glow"></div>
+                        <span class="cert-ribbon">Certified</span>
+                        <div class="cert-header">
+                            <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="Microsoft Certified Associate badge" class="cert-logo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥</text></svg>'">
+                            <span class="cert-provider">Microsoft 365</span>
+                        </div>
+                        <h3 class="cert-name">Endpoint Administrator (MD-102)</h3>
+                        <p class="cert-desc">Deploy, manage & secure endpoints with Intune</p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Earned: Aug 18, 2026 · Renew by Aug 2027</span>
+                            <span class="cert-level">Associate</span>
+                        </div>
+                        <div class="cert-skills">
+                            <span>Intune</span><span>Autopilot</span><span>Entra ID</span><span>Compliance</span><span>Defender</span><span>Windows 11</span>
+                        </div>
+                        <a class="cert-verify" href="https://learn.microsoft.com/en-us/users/HamadTariq-6960/credentials/89B53038678339F2" target="_blank" rel="noopener noreferrer">
+                            Verify on Microsoft Learn <span class="cert-verify-icon">↗</span>
+                        </a>
+                    </article>
+                </div>
+                <h3 class="certs-group-title" data-reveal><span class="certs-group-marker">▸</span> Scheduled — Sep 2026</h3>
+                <div class="certs-grid">
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="100">
                         <div class="cert-glow"></div>
                         <div class="cert-header">
                             <img src="https://learn.microsoft.com/en-us/credentials/media/azure-administrator-badge.png" alt="Azure" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
@@ -369,14 +427,14 @@
                         <h3 class="cert-name">Azure Administrator (AZ-104)</h3>
                         <p class="cert-desc">Manage Azure identities & governance</p>
                         <div class="cert-meta">
-                            <span class="cert-date">Exam: Aug 2026</span>
+                            <span class="cert-date">Exam: Sep 2026</span>
                             <span class="cert-level">Associate</span>
                         </div>
                         <div class="cert-skills">
                             <span>Entra ID</span><span>RBAC</span><span>Storage</span><span>Networking</span><span>Monitor</span><span>Backup</span>
                         </div>
                     </article>
-                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="300">
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="200">
                         <div class="cert-glow"></div>
                         <div class="cert-header">
                             <img src="https://www.cisco.com/c/dam/global/en_mx/assets/logos/cisco-certified-network-associate.svg" alt="CCNA" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>'">
@@ -385,14 +443,14 @@
                         <h3 class="cert-name">CCNA (200-301)</h3>
                         <p class="cert-desc">Network fundamentals & automation</p>
                         <div class="cert-meta">
-                            <span class="cert-date">Exam: Aug 2026</span>
+                            <span class="cert-date">Exam: Sep 2026</span>
                             <span class="cert-level">Associate</span>
                         </div>
                         <div class="cert-skills">
                             <span>Routing</span><span>Switching</span><span>VLAN</span><span>OSPF</span><span>Python</span><span>Ansible</span>
                         </div>
                     </article>
-                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="400">
+                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="300">
                         <div class="cert-glow"></div>
                         <div class="cert-header">
                             <img src="https://learn.microsoft.com/en-us/credentials/media/azure-devops-engineer-badge.png" alt="Azure DevOps" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙</text></svg>'">
@@ -401,7 +459,7 @@
                         <h3 class="cert-name">Azure DevOps Engineer (AZ-400)</h3>
                         <p class="cert-desc">DevOps practices & GitHub Actions</p>
                         <div class="cert-meta">
-                            <span class="cert-date">Target: Q1 2027</span>
+                            <span class="cert-date">Exam: Sep 2026</span>
                             <span class="cert-level">Expert</span>
                         </div>
                         <div class="cert-skills">
