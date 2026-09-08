@@ -55,12 +55,21 @@
             },
             {
                 "@type": "EducationalOccupationalCredential",
-                "name": "Microsoft 365 Certified: Endpoint Administrator Associate",
+                "name": "Microsoft Certified: Azure Administrator Associate",
                 "credentialCategory": "certificate",
                 "recognizedBy": { "@type": "Organization", "name": "Microsoft" },
-                "dateCreated": "2026-08-18",
-                "expires": "2027-08-18",
-                "url": "https://learn.microsoft.com/en-us/users/HamadTariq-6960/credentials/89B53038678339F2"
+                "dateCreated": "2026-09-07",
+                "expires": "2027-09-07",
+                "url": "https://learn.microsoft.com/"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Microsoft Certified: DevOps Engineer Expert",
+                "credentialCategory": "certificate",
+                "recognizedBy": { "@type": "Organization", "name": "Microsoft" },
+                "dateCreated": "2026-09-07",
+                "expires": "2027-09-07",
+                "url": "https://learn.microsoft.com/"
             }
         ]
     }
@@ -152,9 +161,9 @@
                         <div class="terminal-output certs-preview">
                             <div class="cert-badge" data-cert="aws" data-status="earned">AWS Solutions Architect ✓</div>
                             <div class="cert-badge" data-cert="m365" data-status="earned">M365 Endpoint Admin ✓</div>
-                            <div class="cert-badge" data-cert="azure">Azure Administrator</div>
+                            <div class="cert-badge" data-cert="azure" data-status="earned">Azure Administrator AZ-104 ✓</div>
                             <div class="cert-badge" data-cert="ccna">CCNA</div>
-                            <div class="cert-badge" data-cert="azdo">Azure DevOps</div>
+                            <div class="cert-badge" data-cert="azdo" data-status="earned">Azure DevOps Expert AZ-400 ✓</div>
                         </div>
                         <div class="terminal-line">
                             <span class="prompt">$</span>
@@ -221,7 +230,7 @@
                             <span class="card-icon">⚡</span>
                             <h3>Profile</h3>
                         </div>
-                        <p>IT Administrator and DevOps Engineer with 5+ years of experience designing, implementing, and managing cloud infrastructure. Specialized in AWS, Azure, and network automation. AWS Certified Solutions Architect – Associate and Microsoft 365 Certified: Endpoint Administrator Associate, with CCNA, AZ-104, and AZ-400 lined up next.</p>
+                        <p>IT Administrator and DevOps Engineer with 5+ years of experience designing, implementing, and managing cloud infrastructure. Specialized in AWS, Azure, and network automation. AWS Certified Solutions Architect – Associate and Microsoft 365 Certified: Endpoint Administrator Associate, with CCNA, AZ-104, and AZ-400 certified.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">Linux</span>
                             <span class="tech-tag">Windows Server</span>
@@ -296,10 +305,10 @@
                             <div class="cert-item">
                                 <div class="cert-info">
                                     <span class="cert-name">Azure Administrator (AZ-104)</span>
-                                    <span class="cert-status">Exam Sep 2026</span>
+                                    <span class="cert-status certified">Certified · Sep 2026</span>
                                 </div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="--progress: 75%"></div>
+                                    <div class="progress-fill complete" style="--progress: 100%"></div>
                                 </div>
                             </div>
                             <div class="cert-item">
@@ -314,10 +323,10 @@
                             <div class="cert-item">
                                 <div class="cert-info">
                                     <span class="cert-name">Azure DevOps Engineer (AZ-400)</span>
-                                    <span class="cert-status">Exam Sep 2026</span>
+                                    <span class="cert-status certified">Certified · Sep 2026</span>
                                 </div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="--progress: 50%"></div>
+                                    <div class="progress-fill complete" style="--progress: 100%"></div>
                                 </div>
                             </div>
                         </div>
@@ -415,26 +424,50 @@
                             Verify on Microsoft Learn <span class="cert-verify-icon">↗</span>
                         </a>
                     </article>
-                </div>
-                <h3 class="certs-group-title" data-reveal><span class="certs-group-marker">▸</span> Scheduled — Sep 2026</h3>
+                        <article class="cert-card glass tilt-card earned" data-tilt data-reveal data-reveal-delay="300">
+                            <div class="cert-glow"></div>
+                            <span class="cert-ribbon">Certified</span>
+                            <div class="cert-header">
+                                <img src="https://learn.microsoft.com/en-us/credentials/media/azure-administrator-badge.png" alt="Azure" class="cert-logo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
+                                <span class="cert-provider">Microsoft Azure</span>
+                            </div>
+                            <h3 class="cert-name">Azure Administrator (AZ-104)</h3>
+                            <p class="cert-desc">Manage Azure identities & governance</p>
+                            <div class="cert-meta">
+                                <span class="cert-date">Earned: Sep 7, 2026 · Valid to Sep 2027</span>
+                                <span class="cert-level">Associate</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span>Entra ID</span><span>RBAC</span><span>Storage</span><span>Networking</span><span>Monitor</span><span>Backup</span>
+                            </div>
+                            <a class="cert-verify" href="https://learn.microsoft.com/en-us/users/hamadtariq-6960/credentials/787fbf4c65e4f688" target="_blank" rel="noopener noreferrer">
+                                Verify on Microsoft Learn <span class="cert-verify-icon">↗</span>
+                            </a>
+                        </article>
+                        <article class="cert-card glass tilt-card earned" data-tilt data-reveal data-reveal-delay="400">
+                            <div class="cert-glow"></div>
+                            <span class="cert-ribbon">Certified</span>
+                            <div class="cert-header">
+                                <img src="https://learn.microsoft.com/en-us/credentials/media/azure-devops-engineer-badge.png" alt="Azure DevOps" class="cert-logo" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙</text></svg>'">
+                                <span class="cert-provider">Microsoft Azure</span>
+                            </div>
+                            <h3 class="cert-name">Azure DevOps Engineer (AZ-400)</h3>
+                            <p class="cert-desc">DevOps practices & GitHub Actions</p>
+                            <div class="cert-meta">
+                                <span class="cert-date">Earned: Sep 7, 2026 · Valid to Sep 2027</span>
+                                <span class="cert-level">Expert</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span>Pipelines</span><span>Repos</span><span>Artifacts</span><span>Boards</span><span>GitHub</span><span>Security</span>
+                            </div>
+                            <a class="cert-verify" href="https://learn.microsoft.com/en-us/users/hamadtariq-6960/credentials/3e4e23f6b308a0d9" target="_blank" rel="noopener noreferrer">
+                                Verify on Microsoft Learn <span class="cert-verify-icon">↗</span>
+                            </a>
+                        </article>
+                    </div>
+                    <h3 class="certs-group-title" data-reveal><span class="certs-group-marker">▸</span> Scheduled — Sep 2026</h3>
                 <div class="certs-grid">
                     <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="100">
-                        <div class="cert-glow"></div>
-                        <div class="cert-header">
-                            <img src="https://learn.microsoft.com/en-us/credentials/media/azure-administrator-badge.png" alt="Azure" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☁</text></svg>'">
-                            <span class="cert-provider">Microsoft Azure</span>
-                        </div>
-                        <h3 class="cert-name">Azure Administrator (AZ-104)</h3>
-                        <p class="cert-desc">Manage Azure identities & governance</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Exam: Sep 2026</span>
-                            <span class="cert-level">Associate</span>
-                        </div>
-                        <div class="cert-skills">
-                            <span>Entra ID</span><span>RBAC</span><span>Storage</span><span>Networking</span><span>Monitor</span><span>Backup</span>
-                        </div>
-                    </article>
-                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="200">
                         <div class="cert-glow"></div>
                         <div class="cert-header">
                             <img src="https://www.cisco.com/c/dam/global/en_mx/assets/logos/cisco-certified-network-associate.svg" alt="CCNA" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>'">
@@ -448,22 +481,6 @@
                         </div>
                         <div class="cert-skills">
                             <span>Routing</span><span>Switching</span><span>VLAN</span><span>OSPF</span><span>Python</span><span>Ansible</span>
-                        </div>
-                    </article>
-                    <article class="cert-card glass tilt-card" data-tilt data-reveal data-reveal-delay="300">
-                        <div class="cert-glow"></div>
-                        <div class="cert-header">
-                            <img src="https://learn.microsoft.com/en-us/credentials/media/azure-devops-engineer-badge.png" alt="Azure DevOps" class="cert-logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙</text></svg>'">
-                            <span class="cert-provider">Microsoft Azure</span>
-                        </div>
-                        <h3 class="cert-name">Azure DevOps Engineer (AZ-400)</h3>
-                        <p class="cert-desc">DevOps practices & GitHub Actions</p>
-                        <div class="cert-meta">
-                            <span class="cert-date">Exam: Sep 2026</span>
-                            <span class="cert-level">Expert</span>
-                        </div>
-                        <div class="cert-skills">
-                            <span>Pipelines</span><span>Repos</span><span>Artifacts</span><span>Boards</span><span>GitHub</span><span>Security</span>
                         </div>
                     </article>
                 </div>
